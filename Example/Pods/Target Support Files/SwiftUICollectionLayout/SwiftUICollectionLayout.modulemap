@@ -1,0 +1,6 @@
+framework module SwiftUICollectionLayout {
+  umbrella header "SwiftUICollectionLayout-umbrella.h"
+
+  export *
+  module * { export * }
+}

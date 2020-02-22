@@ -1,0 +1,6 @@
+framework module Pods_SwiftUICollectionLayout_Tests {
+  umbrella header "Pods-SwiftUICollectionLayout_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
