@@ -9,7 +9,7 @@
 import SwiftUI
 import SwiftUICollectionLayout
 struct ContentView: View {
-    @State private var index = 0
+    @State private var text = ""
     private let evnent = HorizontalEvent(id: 1,
                                          indexCount:  [01,02,03,04,05,06,07,08,09,
                                                        02,04,06,08,10,12,14,16,18,
@@ -26,14 +26,14 @@ struct ContentView: View {
                                          verticalValue: 0,
                                          textHeightValue: 1,
                                          fontSize: 12,
-                                         textBtColor: Color.gray,
-                                         backColor: Color.black)
+                                         textBtColor: Color.red,
+                                         backColor: Color.white)
     var body: some View {
         ZStack {
-            HorizontalScrollView(event: self.evnent, action: { index in
-                self.index = index
+            HorizontalScrollView(event: self.evnent, action: { tex in
+                self.text = tex
             })
-            Text(index.description)
+            Text(self.text)
                 .background(Color.white)
         }
     }

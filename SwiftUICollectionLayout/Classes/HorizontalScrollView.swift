@@ -11,12 +11,12 @@ public struct HorizontalScrollView: View {
 
     var rect = CGRect()
     var evnents: HorizontalEvent
-    let action: (_ index: Int) -> Void
+    let action: (_ tex: String) -> Void
 
     @State private var index: Int = 0
     @State private var offset: CGFloat = 0
 
-    public init(event :HorizontalEvent, action: @escaping (Int) -> Void) {
+    public init(event :HorizontalEvent, action: @escaping (String) -> Void) {
         rect = UIScreen.main.bounds
         self.evnents = event
         self.action = action

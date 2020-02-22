@@ -11,9 +11,9 @@ public struct HorizontalTextView: View {
 
     var evnents: HorizontalEvent
     var indexCount: [[Int]]
-    let action: (_ index: Int) -> Void
+    let action: (_ tex: String) -> Void
     
-    public init(event :HorizontalEvent, action: @escaping (Int) -> Void) {
+    public init(event :HorizontalEvent, action: @escaping (String) -> Void) {
         self.evnents = event
         self.indexCount = self.evnents.indexCount.chunked(into: self.evnents.horizontalCount)
         self.action = action
@@ -28,7 +28,7 @@ public struct HorizontalTextView: View {
                             .font(.system(size: self.evnents.fontSize))
                             .frame(minWidth: 0, maxWidth: .infinity,  minHeight: 0, maxHeight: .infinity)
                     }.onTapGesture {
-                        self.action(self.indexCount[idx][index])
+                        self.action("\(self.indexCount[idx][index])")
                     }
                 }
             }
