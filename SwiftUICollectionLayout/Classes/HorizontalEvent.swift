@@ -12,7 +12,7 @@ public class HorizontalEvent: ObservableObject {
     public var indexCount: [Int]
     public var horizontalCount: Int
     public var forEachCount: Int
-    public var offset: CGFloat
+    public var plusCount: Int
     public var horizontalValue: CGFloat
     public var verticalValue: CGFloat
     public var textHeightValue: CGFloat
@@ -23,7 +23,7 @@ public class HorizontalEvent: ObservableObject {
                 indexCount: [Int],
                 horizontalCount: Int,
                 forEachCount: Int,
-                offset: CGFloat,
+                plusCount: Int,
                 horizontalValue: CGFloat,
                 verticalValue: CGFloat,
                 textHeightValue: CGFloat,
@@ -34,7 +34,7 @@ public class HorizontalEvent: ObservableObject {
         self.indexCount = indexCount
         self.horizontalCount = horizontalCount
         self.forEachCount = forEachCount
-        self.offset = offset
+        self.plusCount = plusCount
         self.horizontalValue = horizontalValue
         self.verticalValue = verticalValue
         self.textHeightValue = textHeightValue

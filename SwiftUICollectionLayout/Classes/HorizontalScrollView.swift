@@ -34,7 +34,7 @@ public struct HorizontalScrollView: View {
             }
         }
         .content.offset(x: self.offset)
-        .frame(width: rect.width * CGFloat(self.evnents.forEachCount), alignment: .leading)
+        .frame(width: rect.width * CGFloat(self.evnents.forEachCount), alignment: .center)
         .gesture(DragGesture()
         .onChanged({ value in
             self.offset = value.translation.width - self.rect.width * CGFloat(self.index)
@@ -50,7 +50,6 @@ public struct HorizontalScrollView: View {
                 withAnimation {
                     self.offset = -self.rect.width * CGFloat(self.index)
                     self.offset = self.index == 0 ? self.offset : (self.offset - CGFloat(self.index * 8))
-                    self.evnents.offset = self.offset
                 }
             })
         )

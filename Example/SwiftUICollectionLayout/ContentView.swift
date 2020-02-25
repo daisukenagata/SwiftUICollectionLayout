@@ -22,7 +22,7 @@ struct ContentView: View {
                                                        09,18,27,36,45,54,63,72,81],
                                          horizontalCount: 9,
                                          forEachCount: 2,
-                                         offset: 0,
+                                         plusCount: 0,
                                          horizontalValue: 0,
                                          verticalValue: 0,
                                          textHeightValue: 1,
@@ -32,11 +32,12 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             HorizontalScrollView(event: self.evnent, action: { tex in
-                self.text = tex
-                self.evnent.forEachCount = Int(tex) ?? 0
+                self.evnent.forEachCount += Int(tex) ?? 0
+                self.text = self.evnent.forEachCount.description
             })
             Text(self.text)
                 .background(Color.white)
+
         }
     }
 }
