@@ -27,6 +27,7 @@ public struct HorizontalTextView: View {
                         Text("\(self.indexCount[idx][index])")
                             .font(.system(size: self.evnents.fontSize))
                             .frame(minWidth: 0, maxWidth: .infinity,  minHeight: 0, maxHeight: .infinity)
+                            
                     }.onTapGesture {
                         self.action("\(self.indexCount[idx][index])")
                     }

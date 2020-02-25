@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-public struct HorizontalEvent: Identifiable {
+public class HorizontalEvent: ObservableObject {
     public var id: Int
     public var indexCount: [Int]
     public var horizontalCount: Int
     public var forEachCount: Int
+    public var offset: CGFloat
     public var horizontalValue: CGFloat
     public var verticalValue: CGFloat
     public var textHeightValue: CGFloat
@@ -22,6 +23,7 @@ public struct HorizontalEvent: Identifiable {
                 indexCount: [Int],
                 horizontalCount: Int,
                 forEachCount: Int,
+                offset: CGFloat,
                 horizontalValue: CGFloat,
                 verticalValue: CGFloat,
                 textHeightValue: CGFloat,
@@ -32,6 +34,7 @@ public struct HorizontalEvent: Identifiable {
         self.indexCount = indexCount
         self.horizontalCount = horizontalCount
         self.forEachCount = forEachCount
+        self.offset = offset
         self.horizontalValue = horizontalValue
         self.verticalValue = verticalValue
         self.textHeightValue = textHeightValue

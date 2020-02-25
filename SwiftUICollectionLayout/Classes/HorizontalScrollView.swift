@@ -25,7 +25,7 @@ public struct HorizontalScrollView: View {
     public var body: some View {
         ScrollView(.horizontal,showsIndicators: false) {
             HStack {
-                ForEach(1..<self.evnents.forEachCount) { _ in
+                ForEach(1..<self.evnents.forEachCount, id: \.self) { _ in
                     VStack {
                         HorizontalTextView(event: self.evnents, action: self.action)
                     }
@@ -34,7 +34,7 @@ public struct HorizontalScrollView: View {
             }
         }
         .content.offset(x: self.offset)
-        .frame(width: rect.width * CGFloat(self.evnents.forEachCount), alignment: .center)
+        .frame(width: rect.width * CGFloat(self.evnents.forEachCount), alignment: .leading)
         .gesture(DragGesture()
         .onChanged({ value in
             self.offset = value.translation.width - self.rect.width * CGFloat(self.index)
@@ -50,6 +50,7 @@ public struct HorizontalScrollView: View {
                 withAnimation {
                     self.offset = -self.rect.width * CGFloat(self.index)
                     self.offset = self.index == 0 ? self.offset : (self.offset - CGFloat(self.index * 8))
+                    self.evnents.offset = self.offset
                 }
             })
         )
